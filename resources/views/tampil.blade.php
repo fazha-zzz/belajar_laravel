@@ -6,13 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <td>no</td>
-        </tr>
-        <tr>
-            <td>1</td>
-        </tr>
-    </table>
+    
+
+@foreach($data_siswa as $data)
+<li>{{ $data }}</li>
+@endforeach
+
 </body>
 </html>

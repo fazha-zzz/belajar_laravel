@@ -25,7 +25,7 @@ Route::get('/home', function () {
     return "<h1>selamat datang di halaman HOME</h1>";
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return "<h1>selamat datang di halaman ABOUT</h1>";
 });
 
@@ -46,6 +46,12 @@ Route::get('/hitung/{b1}/{b2}', function ($b1,$b2) {
     return "bilangan 1 : ".$b1."<br>". 
            "bilangan 2 : ".$b2."<br>".
             "hasil : ".$hasil."<br>";
+});
+
+route::get('/siswa', function(){
+    $data_siswa = ['faza','napis','nabila','daffa','dea'];
+
+    return view('tampil',compact('data_siswa'));
 });
 
 Route::get('/latihan/{a1}/{a2}/{a3}/{a4}/{a5}/{a6}', function ($nama, $tlp, $jn, $nb, $jml, $pbayar) {
@@ -112,3 +118,5 @@ $total_p = ($total - $cb) - $potongan;
     "potongan :" .$potongan. "<br><hr>". 
     "total pembayaran :" .$total_p. "<br>";
  });
+
+

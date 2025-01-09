@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\postsController;
+use App\Http\Controllers\siswasController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +29,7 @@ Route::get('/home', function () {
     return "<h1>selamat datang di halaman HOME</h1>";
 });
 
-Route::get('/', function () {
+Route::get('/about', function () {
     return "<h1>selamat datang di halaman ABOUT</h1>";
 });
 
@@ -120,3 +124,26 @@ $total_p = ($total - $cb) - $potongan;
  });
 
 
+//routing dengan model
+
+
+//routing dengan model
+Route::get('/post', [postsController::class, 'menampilkan']);
+Route::get('/barang', [postsController::class, 'menampilkan2']);
+
+
+
+// Route::get('/barang', function () {
+//     $barang = barang::all();
+//     return view('tampil_barang',compact('barang'));
+// });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//CRUD
+Route::resource('siswa', siswasController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

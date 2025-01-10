@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postsController;
 use App\Http\Controllers\siswasController;
+use App\Http\Controllers\ppdbs222Controller;
+
+
+
 
 
 
@@ -144,6 +148,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //CRUD
 Route::resource('siswa', siswasController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('ppdb', ppdbs222Controller::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

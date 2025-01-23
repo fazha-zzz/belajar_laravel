@@ -4,6 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\postsController;
 use App\Http\Controllers\siswasController;
 use App\Http\Controllers\ppdbs222Controller;
+use App\Http\Controllers\ayamscontroller;
+use App\Http\Controllers\penggunascontroller;
+use App\Http\Controllers\TelponsController;
+use App\Http\Controllers\kategorisController;
+use App\Http\Controllers\produksController;
+use App\Http\Controllers\customersController;
+use App\Http\Controllers\productsController;
+use App\Http\Controllers\ordersController;
+
+
+
+
+
 
 
 
@@ -157,3 +170,46 @@ Route::resource('ppdb', ppdbs222Controller::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('ayam', ayamsController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('pengguna', penggunasController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('telpon', TelponsController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('kategori', kategorisController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('produk', produksController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('product', productsController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('customer', customersController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('order', ordersController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

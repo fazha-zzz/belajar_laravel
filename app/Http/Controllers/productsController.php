@@ -37,6 +37,22 @@ class productsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $validasi = $request->validate([
+            'nama_produk' => 'required|max:10',
+            'merk' => 'required',
+            'price' => 'required|numeric|min:0',
+            'stok' => 'required|integer|min:0',
+
+        ], [
+            'nama_produk.required' => 'nama produk harus diisi.',
+            'merk.required' => 'merk produk harus di isi.',
+            'price.required' => 'harga produk harus di isi.',
+            'price.numeric' => 'harga produk harus berupa angka.',
+            'stok.required' => 'stok produk harus di isi.',
+            'stok.integer' => 'stok produk harus berupa angka bulat.',
+
+        ]);
         $product = new product;
         $product->nama_produk = $request->nama_produk;
         $product->merk = $request->merk;
@@ -80,6 +96,7 @@ class productsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $product = product::findOrFail($id);
         $product->nama_produk = $request->nama_produk;
         $product->merk = $request->merk;

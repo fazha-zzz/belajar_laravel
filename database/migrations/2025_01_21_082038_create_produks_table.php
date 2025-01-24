@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->string('harga');
             $table->string('stok');
+            $table->string('cover');
             $table->unsignedBigInteger('id_kategori');
             $table->foreign('id_kategori')->references('id')->on('kategoris')->onDelete('cascade');
             $table->timestamps();

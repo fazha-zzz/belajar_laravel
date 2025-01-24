@@ -42,6 +42,17 @@ class ordersController extends Controller
      */
     public function store(Request $request)
     {
+        $validasi = $request->validate([
+            'merk' => 'required',
+            'price' => 'required|numeric|min:0',
+
+        ], [
+            'price.required' => 'harga harus di isi.',
+            'price.numeric' => 'harga harus berupa angka.',
+            'order_date.required' => 'tanggal harus di isi.',
+            
+
+        ]);
         $order = new order;
         $order->id_product= $request->id_product;
         $order->quantity = $request->quantity;

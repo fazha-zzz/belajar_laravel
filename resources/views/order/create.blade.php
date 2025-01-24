@@ -20,10 +20,16 @@
                     <div class="form-group mb-3">
                         <label>quantity</label>
                         <input type="tekt" class="form-control" name="quantity" >
+                        @error('quantity')
+                       <div class="text-danger">{{ $message }}</div>
+                       @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label>order date</label>
                         <input type="date" class="form-control" name="order_date" >
+                        @error('order_date')
+                       <div class="text-danger">{{ $message }}</div>
+                       @enderror
                     </div>
                     <div class="form-group mb-3">
                         <label>ID customer</label>

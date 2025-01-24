@@ -46,6 +46,13 @@ class produksController extends Controller
         $produk->stok = $request->stok;
         $produk->id_kategori = $request->id_kategori;
 
+        if ($request->hasFile('cover')) {
+            $img = $request->file('cover');
+            $name = rand(1000,9999) . $img->getClientOriginalName();
+            $img->move('image/produk', $name);
+            $produk->cover = $name;
+        }
+
         $produk->save();
         
         return redirect()->route('produk.index')->with('success', 'data berhasil ditambahkan');
@@ -91,6 +98,15 @@ class produksController extends Controller
         $produk->harga = $request->harga;
         $produk->stok = $request->stok;
         $produk->id_kategori = $request->id_kategori;
+
+        
+        if ($request->hasFile('cover')) {
+            $produk->deleteImage();
+            $img = $request->file('cover');
+            $name = rand(1000,9999) . $img->getClientOriginalName();
+            $img->move('image/produk', $name);
+            $produk->cover = $name;
+        }
 
         $produk->save();
         

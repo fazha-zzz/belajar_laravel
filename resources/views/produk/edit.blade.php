@@ -30,6 +30,11 @@
                         @endforeach
                     </select>
                     </div>
+                    <div class="form-group mb-3">
+                        <label>cover</label>
+                        <img src="{{ asset('/images/produk/' . $produk->cover)}}" width="100" alt="">
+                        <input type="file" class="form-control" name="cover" require>
+                    </div>
                     <button type="submit" class="btn btn-primary" name="save">Save</button>
                     </form>
                 </div>

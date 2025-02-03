@@ -12,6 +12,12 @@ use App\Http\Controllers\produksController;
 use App\Http\Controllers\customersController;
 use App\Http\Controllers\productsController;
 use App\Http\Controllers\ordersController;
+use App\Http\Controllers\penerbitsController;
+use App\Http\Controllers\pembelisController;
+use App\Http\Controllers\genresController;
+use App\Http\Controllers\bukusController;
+use App\Http\Controllers\transaksisController;
+
 
 
 
@@ -209,6 +215,33 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('order', ordersController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::resource('penerbit', penerbitsController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('pembeli', pembelisController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('genre', genresController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('buku', bukusController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('transaksi', transaksisController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
